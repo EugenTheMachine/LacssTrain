@@ -1,0 +1,70 @@
+# from __future__ import annotations
+
+# from pathlib import Path
+# from typing import Any, Mapping, Protocol, TypedDict, Union
+
+# import numpy as np
+# import optax
+# from flax.core.frozen_dict import FrozenDict
+# from jax import Array
+# from jax.typing import ArrayLike
+
+# Params = FrozenDict
+
+# Optimizer = optax.GradientTransformation
+
+# PathLike = Union[str, Path]
+
+
+# class LossFunc_(Protocol):
+#     def __call__(self, batch: Any, prediction: Any) -> float:
+#         ...
+
+
+# LossFunc = LossFunc_ | str
+# # LossFunc = LossFunc_
+
+
+# class Metric(Protocol):
+#     def update(self, batch: Any, prediction: Any):
+#         ...
+
+#     def compute(self, *args, **kwargs) -> dict:
+#         ...
+
+
+# class Patches(TypedDict):
+#     instance_output: ArrayLike
+#     instance_yc: ArrayLike
+#     instance_xc: ArrayLike
+
+
+# DataDict = Mapping[str, ArrayLike]
+
+# __all__ = [
+#     "Array",
+#     "ArrayLike",
+#     "DataDict",
+#     "Params",
+#     "Optimizer",
+#     "LossFunc",
+#     "Metric",
+#     "Patches",
+#     "PathLike",
+# ]
+from __future__ import annotations
+
+import pathlib
+from typing import Union, Mapping, Any, Sequence
+
+import optax
+from jax import Array
+from jax.typing import ArrayLike
+
+Optimizer = optax.GradientTransformation
+
+PathLike = Union[str, pathlib.Path]
+
+DataDict = Mapping[str, ArrayLike]
+
+Patches = DataDict
